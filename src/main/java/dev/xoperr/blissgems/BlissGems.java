@@ -2266,7 +2266,7 @@ public final class BlissGems extends JavaPlugin implements Listener, TabComplete
             Vector velocity = player.getEyeLocation().getDirection().multiply(2.5);
             Egg egg = player.launchProjectile(Egg.class, velocity);
             eggs.add(egg.getUniqueId());
-            player.playSound(player.getLocation(), Sound.ENTITY_CROSSBOW_SHOOT, 1.0f, 1.2f);
+            player.playSound(player.getLocation(), Sound.ENTITY_ARROW_SHOOT, 1.0f, 1.2f);
         }
 
         /** Explosion effect with damage only: the explosion never breaks blocks. */
@@ -4163,7 +4163,7 @@ public final class BlissGems extends JavaPlugin implements Listener, TabComplete
                 return;
             }
             ItemStack offhand = attacker.getInventory().getItemInOffHand();
-            if (plugin.gems().typeOf(offhand) != GemType.LIFE || !plugin.energy().passivesActive(player.getUniqueId())) {
+            if (plugin.gems().typeOf(offhand) != GemType.LIFE || !plugin.energy().passivesActive(attacker.getUniqueId())) {
                 return;
             }
             if (!(event.getEntity() instanceof LivingEntity target) || !isUndead(target)) {
@@ -5099,7 +5099,7 @@ public final class BlissGems extends JavaPlugin implements Listener, TabComplete
                 return;
             }
             ItemStack offhand = attacker.getInventory().getItemInOffHand();
-            if (plugin.gems().typeOf(offhand) != GemType.STRENGTH || !plugin.energy().passivesActive(player.getUniqueId())) {
+            if (plugin.gems().typeOf(offhand) != GemType.STRENGTH || !plugin.energy().passivesActive(attacker.getUniqueId())) {
                 return;
             }
             int tier = plugin.gems().tierOf(offhand);
@@ -5576,7 +5576,7 @@ public final class BlissGems extends JavaPlugin implements Listener, TabComplete
                 return;
             }
             ItemStack offhand = attacker.getInventory().getItemInOffHand();
-            if (plugin.gems().typeOf(offhand) != GemType.WEALTH || !plugin.energy().passivesActive(player.getUniqueId())) {
+            if (plugin.gems().typeOf(offhand) != GemType.WEALTH || !plugin.energy().passivesActive(attacker.getUniqueId())) {
                 return;
             }
             int tier = plugin.gems().tierOf(offhand);
