@@ -248,7 +248,7 @@ public final class BlissGems extends JavaPlugin implements Listener, TabComplete
 
     /** Double debris: ancient debris smelted near a Wealth gem holder gives 2 netherite scrap. */
     @EventHandler
-    public void onFurnaceSmelt(org.bukkit.event.block.FurnaceSmeltEvent event) {
+    public void onFurnaceSmelt(org.bukkit.event.inventory.FurnaceSmeltEvent event) {
         if (event.getSource().getType() != Material.ANCIENT_DEBRIS || event.getResult().getType() != Material.NETHERITE_SCRAP) {
             return;
         }
